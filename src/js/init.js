@@ -196,17 +196,31 @@ function addBottomTriangle() {
 }
 
 function displayGenderTitle() {
-    document.getElementById("gender").innerHTML = randomGenderGenerator();
-    document.getElementById("gender").style = "color:" + randomColor();
-
-}
-
-function randomGenderGenerator() {
+    
     var prefix = gender_prefix[Math.floor(Math.random()*gender_prefix.length)];
     var suffix = gender_suffix[Math.floor(Math.random()*gender_suffix.length)];
+
+   
+    
     var gender = (prefix + suffix).toUpperCase();
 
-    return gender;
+    document.getElementById("gender").innerHTML = gender;
+    document.getElementById("gender").style = "color:" + randomColor();
+    
+
+    randomGenderNumberGenerator()
+}
+
+function randomGenderNumberGenerator() {
+    var use_hex = Math.random() >= 0.5;
+    if (use_hex == true) {
+        var gender_number = "#" + (Math.random()*0xFFFFFFFFF<<0).toString(16);
+    } else {
+        var gender_number = "#" + ((Math.random()*999999899)+1000);
+    }
+    
+    document.getElementById("gender_number").innerHTML = gender_number;
+    document.getElementById("gender_number").style = "color:" + randomColor();
 }
 
 function randomColor() {

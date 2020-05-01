@@ -8,32 +8,35 @@ body {
 svg {
     background-color: #a7a7a7;
 }
-a#gender {
+
+a {
     font-family: Segoe UI, Arial, Verdana, sans-serif;
     text-align: center;
     width: 100%;
+    text-shadow: 0.25vw 0.25vw 0.5vw #00000080;
+    position: absolute;
+    text-transform: uppercase;
+}
+a#gender {
     bottom: 5%;
     font-size: 5em;
-    text-shadow: 0.25vw 0.25vw 0.5vw #00000080;
+}
+
+a#gender_number {
+    bottom: 13.33%;
+    font-size: 3em;
 }
 
 a#button {
-    font-family: Segoe UI, Arial, Verdana, sans-serif;
-    text-align: center;
-    width: 100%;
     bottom: 2.5%;
-    font-size: 1;
+    font-size: 1vw;
     color: #00000040;
-    text-transform: uppercase;
-    text-shadow: 0.25vw 0.25vw 0.5vw #00000080;
+    user-select: none;
 }
 
 a#button:hover {
     text-decoration: underline;
     cursor: pointer;
     color: #0000ff80;
-}
-
-a.text {
-    position: absolute;
+    user-select: none;
 }
