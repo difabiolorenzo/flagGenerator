@@ -8,8 +8,13 @@ function init() {
     createFlag()
 }
 
+function redo() {
+    document.getElementById('flag').innerHTML = "";
+    init()
+}
+
 function generateSVG() {
-    draw = SVG().addTo('body').size(window.innerWidth, window.innerHeight)
+    draw = SVG().addTo(document.getElementById('flag')).size(window.innerWidth, window.innerHeight)
 }
 
 function createFlag() {
@@ -34,7 +39,7 @@ function createFlag() {
     
 
     for (var i = 0 ; i < layer_amount ; i++) {
-        console.log(selected_layer_style[i])
+        // console.log(selected_layer_style[i])
         switch (selected_layer_style[i]) {
             case "half_up":
                 addUpperHalf();
@@ -83,12 +88,11 @@ function createFlag() {
                 addRightTriangle()
                 break;
             default:
-                console.log('Sorry, we are out of ' + expr + '.');
         }
         layer_amount--
     }
 
-    console.log(layer_amount, duplicated_layer_style, selected_layer_style);
+    // console.log(layer_amount, duplicated_layer_style, selected_layer_style);
 }
 
 function addUpperHalf() {
